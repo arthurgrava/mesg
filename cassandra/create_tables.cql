@@ -8,7 +8,7 @@ CREATE TABLE user (
 CREATE TABLE message (
     sender uuid,
     target uuid,
-    content text,
     message_time timestamp,
-    PRIMARY KEY (sender, target, message_time)
+    content text,
+    PRIMARY KEY ((sender, target), message_time)
 ) WITH CLUSTERING ORDER BY (message_time DESC);
